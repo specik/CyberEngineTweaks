@@ -21,7 +21,7 @@ elseif is_mode("release") then
 end
 
 add_cxflags("/bigobj", "/MP")
-add_defines("RED4EXT_STATIC_LIB", "UNICODE")
+add_defines("RED4EXT_STATIC_LIB")
 
 before_build(function (target)
 	import("modules.version")
