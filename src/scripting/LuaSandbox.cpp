@@ -99,7 +99,8 @@ static constexpr const char* s_cGlobalExtraLibsWhitelist[] =
     "ImDrawCornerFlags",
     "ImGuiCol",
     "ImGuiDir",
-    "json"
+    "json",
+    "socket"
 };
 
 LuaSandbox::LuaSandbox(sol::state_view aStateView)
