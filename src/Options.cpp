@@ -86,12 +86,12 @@ void Options::ResetToDefaults()
 Options::Options(Paths& aPaths)
     : m_paths(aPaths)
 {
-    const auto* exePathStr = aPaths.Executable().native().c_str(); 
-    int verInfoSz = GetFileVersionInfoSize(exePathStr, nullptr);
+    const auto exePathStr = aPaths.Executable().string(); 
+    int verInfoSz = GetFileVersionInfoSize(exePathStr.c_str(), nullptr);
     if(verInfoSz) 
     {
         auto verInfo = std::make_unique<BYTE[]>(verInfoSz);
-        if(GetFileVersionInfo(exePathStr, 0, verInfoSz, verInfo.get())) 
+        if(GetFileVersionInfo(exePathStr.c_str(), 0, verInfoSz, verInfo.get())) 
         {
             struct 
             {

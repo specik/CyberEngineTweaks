@@ -41,7 +41,7 @@ Scripting::Scripting(const Paths& aPaths, VKBindings& aBindings, D3D12& aD3D12)
 void Scripting::Initialize()
 {
     m_lua.open_libraries(sol::lib::base, sol::lib::string, sol::lib::io, sol::lib::math, sol::lib::package, sol::lib::os, sol::lib::table);
-    luaopen_socket_core(m_lua.lua_state());
+    m_lua.require("socket", luaopen_socket_core);
     m_lua.require("sqlite3", luaopen_lsqlite3);
 
     sol_ImGui::InitBindings(m_lua);
