@@ -18,8 +18,6 @@
 #include <reverse/Enum.h>
 #include <reverse/TweakDB.h>
 
-extern "C" int luaopen_socket_core(lua_State* L);
-
 #include "Utils.h"
 
 #ifndef NDEBUG
@@ -29,6 +27,8 @@ extern "C" int luaopen_socket_core(lua_State* L);
 #endif
 
 static RED4ext::IRTTIType* s_pStringType = nullptr;
+
+extern "C" int luaopen_socket_core(lua_State *L);
 
 Scripting::Scripting(const Paths& aPaths, VKBindings& aBindings, D3D12& aD3D12)
     : m_store(m_sandbox, aPaths, aBindings)
