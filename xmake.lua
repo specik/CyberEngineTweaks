@@ -78,6 +78,7 @@ target("cyber_engine_tweaks")
     add_syslinks("User32", "Version", "d3d11")
     add_packages("spdlog", "nlohmann_json", "minhook", "hopscotch-map", "imgui", "mem", "sol2", "tiltedcore", "libcurl")
     add_deps("RED4ext.SDK")
+    add_deps("RED4ext.SDK", "luasocket")
 
 	on_package(function(target)
 		os.mkdir("package/bin/x64/plugins/cyber_engine_tweaks/scripts")
