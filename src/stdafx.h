@@ -5,6 +5,7 @@
 #include <imgui.h>
 #include <MinHook.h>
 #include <nlohmann/json.hpp>
+#include <luasocket/socket.h>
 
 #include <RED4ext/REDfunc.hpp>
 #include <RED4ext/DynArray.hpp>
